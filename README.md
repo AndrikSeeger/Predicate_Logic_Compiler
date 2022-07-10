@@ -15,12 +15,12 @@
 ### Semantics
 Operands  | PREDLOG1
 :-------------: | :-------------:
-\\↔  | <->
+↔  | <->
 →  | ->
 ∨  | \\|
 ∧  | &
 ¬  | ~
-∀<var>  | ALL[\\<var>] or ALL [\\<var>]
-∃<var>  | EXIST[<var>] or EXIST [<var>]
+∀<var>  | ALL[\<var\>] or ALL [\<var\>]
+∃<var>  | EXIST[\<var\>] or EXIST [\<var\>]
 0  | FALSE
 1  | TRUE
