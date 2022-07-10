@@ -11,8 +11,12 @@
 * Make
 
 ## Language
-### Semantics
-Operands  | PREDLOG1
+
+### Comments
+Comments are declared using `/*` as in front the start of the comment and `*/` after the end of the comment. The comments are limited to one line per declaration.
+
+### Operands
+Operand  | PREDLOG1 equivalent
 :-------------: | :-------------:
 &hArr; | <->
 →  | ->
