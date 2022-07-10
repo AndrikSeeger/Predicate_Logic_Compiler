@@ -12,7 +12,7 @@ To compile the code you need:
 * GCC
 * Make
 
-With those prequistes met you can simply run ```make```for the ```main.c```file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyse PREDLOG1-Code.
+With those prequistes met you can simply run ```make``` for the ```main.c``` file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyse PREDLOG1-Code.
 
 ## Language
 
