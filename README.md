@@ -40,7 +40,7 @@ Operand  | PREDLOG1 equivalent
 
 ### Priority
 
-function ≫ predicate ≫ ∀,∃ ≫ ¬ ≫ ∧ ≫ ∨ ≫ → ≫ ↔
+function ≫ predicate ≫ ∀,∃ ≫ ¬ ≫ ∧ ≫ ∨ ≫ → ≫ &hArr;
   
 ### Example
 ```
