@@ -1,7 +1,7 @@
 <!--Copyright Andrik Seeger 2022-->
 
 # Compiler for first-order predicate calculus
-
+This project is the development of a new compiler that reliably interprets and optimizes first-order predicate calculus. Therefor a new language (PREDLOG1) was created to define the logic terms as text/code
 
 ## Process
 
