@@ -23,9 +23,10 @@ Comments are declared using `/*` as in front the start of the comment and `*/` a
 
 ### Declarations
 Every predicate, function and variable needs to be declared as follows before used: 
-* **Predicate: ** DECLARE PREDICATE \<id\> : \<arity\> 
-* **Function: ** DECLARE FUNCTION \<id\> : \<arity\> 
-* **Variable: ** DECLARE VARIABLE \<id\> : int
+
+* **Predicate:** DECLARE PREDICATE \<id\> : \<arity\> 
+* **Function:** DECLARE FUNCTION \<id\> : \<arity\> 
+* **Variable:** DECLARE VARIABLE \<id\> : int
 
 \<id\> declares the identifier and \<arity\> declares the number of arguments.
 
