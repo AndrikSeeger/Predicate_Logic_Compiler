@@ -5,7 +5,7 @@
 
 ## Usage
 
-To run the code you need:
+To compile the code you need:
 
 * Flex 
 * Bison
