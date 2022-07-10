@@ -18,7 +18,12 @@ The language used is a new creation called "PREDLOG1" short for first-order pred
 Comments are declared using `/*` as in front the start of the comment and `*/` after the end of the comment. The comments are limited to one line per declaration.
 
 ### Declarations
+Every predicate, function and variable needs to be declared as follows before used: 
+* **Predicate: ** DECLARE PREDICATE <id> : <arity> 
+* **Function: ** DECLARE FUNCTION <id> : <arity> 
+* **Variable: ** DECLARE VARIABLE <id> : int
 
+<id> declares the identifier and <arity> declares the number of arguments.
 
 ### Operands
 Operand  | PREDLOG1 equivalent
@@ -40,8 +45,8 @@ Operand  | PREDLOG1 equivalent
 DECLARE PREDICATE Buys : 2
 DECLARE PREDICATE Pumpkin : 1
 DECLARE PREDICATE Person : 1
-DECLARE PREDICATE Eats : 2
-DECLARE PREDICATE Carves : 2
+DECLARE FUNCTION Eats : 2
+DECLARE FUNCTION Carves : 2
 DECLARE FUNCTION John : 0
 DECLARE VARIABLE x : int
 DECLARE VARIABLE y : int
