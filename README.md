@@ -38,7 +38,7 @@ Every predicate, function and variable needs to be declared as follows before us
 * **Function:** DECLARE FUNCTION \<id\> : \<arity\> 
 * **Variable:** DECLARE VARIABLE \<id\> : int
 
-\<id\> declares the identifier and \<arity\> declares the number of arguments.
+```\<id\>``` declares the identifier and ```\<arity\>``` declares the number of arguments.
 
 ### Operands
 Operand  | PREDLOG1 equivalent
