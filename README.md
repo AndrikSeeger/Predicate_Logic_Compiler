@@ -1,7 +1,7 @@
 <!--Copyright Andrik Seeger 2022-->
 
 # Compiler for first-order predicate calculus
-This project is the development of a new compiler that reliably interprets and optimizes first-order predicate calculus. Therefor a new language (PREDLOG1) was created to define the logic terms as text/code
+This project is the development of a new compiler that reliably interprets and optimizes first-order predicate calculus. Therefor a new language (PREDLOG1) was created to define the logic terms as code in UTF-8.
 
 ## Process
 
@@ -22,7 +22,7 @@ To compile the code you need:
 * GCC
 * Make
 
-With those prerequisites met you can simply run ```make``` for the ```main.c``` file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyze PREDLOG1-code.
+With those prerequisites met you can simply run ```make``` for the ```main.c``` file and build the compiler program. You can use the compiler to analyze your PREDLOG1-code, when using your desired file as the first input argument executing the compiled program.
 
 ## Language
 
