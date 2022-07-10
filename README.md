@@ -2,6 +2,15 @@
 
 # Compiler for first-order predicate calculus
 
+## Process
+
+The abstract compilation process goes as follows: 
+
+1. Lexical analysis
+2. Syntactical analysis
+3. Semantical analysis
+4. Code optimization
+5. Final code generation
 
 ## Usage
 
@@ -12,11 +21,11 @@ To compile the code you need:
 * GCC
 * Make
 
-With those prequistes met you can simply run ```make``` for the ```main.c``` file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyse PREDLOG1-Code.
+With those prerequisites met you can simply run ```make``` for the ```main.c``` file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyze PREDLOG1-code.
 
 ## Language
 
-The language used is a new creation called "PREDLOG1" short for first-order predicate logic. The following paragraphs descripe the syntax used to translate first-order predicate calculus terms to PREDLOG1.
+The language used is a new creation called "PREDLOG1" short for first-order predicate logic. The following paragraphs describe the syntax used to translate first-order predicate calculus terms to PREDLOG1.
 
 ### Comments
 Comments are declared using `/*` as in front the start of the comment and `*/` after the end of the comment. The comments are limited to one line per declaration.
