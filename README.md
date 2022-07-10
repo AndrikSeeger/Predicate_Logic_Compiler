@@ -5,10 +5,14 @@
 
 ## Usage
 
+To run the code you need:
+
 * Flex 
 * Bison
 * GCC
 * Make
+
+With those prequistes met you can simply run ```make```for the ```main.c```file and build the compiler program. Using your desired file as the first input argument for the resulting program you can use the compiler to analyse PREDLOG1-Code.
 
 ## Language
 
@@ -40,7 +44,7 @@ Operand  | PREDLOG1 equivalent
 
 ### Priority
 
-The order of priority is structured as follows with decreasing priority from left to right;
+The order of priority is structured as follows with decreasing priority from left to right:
 
 function ≫ predicate ≫ ∀,∃ ≫ ¬ ≫ ∧ ≫ ∨ ≫ → ≫ &hArr;
   
