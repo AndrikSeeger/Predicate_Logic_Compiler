@@ -40,6 +40,8 @@ Operand  | PREDLOG1 equivalent
 
 ### Priority
 
+The order of priority is structured as follows with decreasing priority from left to right;
+
 function ≫ predicate ≫ ∀,∃ ≫ ¬ ≫ ∧ ≫ ∨ ≫ → ≫ &hArr;
   
 ### Example
