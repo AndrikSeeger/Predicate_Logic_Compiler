@@ -38,6 +38,10 @@ Operand  | PREDLOG1 equivalent
 0  | FALSE
 1  | TRUE
 
+### Priority
+
+function ≫ predicate ≫ ∀,∃ ≫ ¬ ≫ ∧ ≫ ∨ ≫ → ≫ ↔
+  
 ### Example
 ```
 /* Example PREDLOG1 */
