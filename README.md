@@ -2,12 +2,13 @@
 
 # Compiler for first-order predicate calculus
 
+
 ## Process
 
 The abstract compilation process goes as follows: 
 
-1. Lexical analysis
-2. Syntactical analysis
+1. Lexical analysis (Scanner)
+2. Syntactical analysis (Parser and syntaxtree)
 3. Semantical analysis
 4. Code optimization
 5. Final code generation
