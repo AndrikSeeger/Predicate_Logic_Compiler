@@ -1,73 +1,107 @@
-<!--Copyright Andrik Seeger 2022-->
+<!-- Copyright Andrik Seeger 2022 -->
 
-# Compiler for first-order predicate calculus
-This project is the development of a new compiler that reliably interprets and optimizes first-order predicate calculus. Therefor a new language (PREDLOG1) was created to define the logic terms as code in UTF-8.
+# Compiler for First-Order Predicate Calculus
 
-## Process
+This project introduces a custom-built compiler that interprets and optimizes **first-order predicate logic** through a new language called **PREDLOG1**. The language is written in UTF-8 and allows formal logical terms to be defined as readable and structured code.
 
-The abstract compilation process goes as follows: 
+---
 
-1. Lexical analysis (Scanner)
-2. Syntactical analysis (Parser and syntaxtree)
-3. Semantical analysis
-4. Code optimization
-5. Final code generation
+## 🛠️ Compilation Process
 
-## Usage
+The compiler follows a classical, multi-stage compilation pipeline:
 
-To compile the code you need:
+1. **Lexical Analysis** — Tokenizes the input (Scanner via Flex)
+2. **Syntactic Analysis** — Parses tokens into a syntax tree (Parser via Bison)
+3. **Semantic Analysis** — Checks for logical consistency and type rules
+4. **Code Optimization** — Improves structure and reduces redundancy
+5. **Code Generation** — Produces a compiled, internal representation
 
-* Flex 
-* Bison
-* GCC
-* Make
+---
 
-With those prerequisites met you can simply run ```make``` for the ```main.c``` file and build the compiler program. You can use the compiler to analyze your PREDLOG1-code, when using your desired file as the first input argument executing the compiled program.
+## 🚀 Usage
 
-## Language
+To compile and run the compiler, ensure the following tools are installed:
 
-The language used is a new creation called "PREDLOG1" short for first-order predicate logic. The following paragraphs describe the syntax used to translate first-order predicate calculus terms to PREDLOG1.
+* `flex`
+* `bison`
+* `gcc`
+* `make`
+
+Once installed, build the compiler by running:
+
+```bash
+make
+```
+
+This will compile `main.c` and output the executable. Use the compiled program by passing a PREDLOG1 source file as the first argument:
+
+```bash
+./compiler yourfile.predlog1
+```
+
+---
+
+## 🧠 Language Overview: PREDLOG1
+
+PREDLOG1 (Predicate Logic Level 1) is a domain-specific language designed for expressing first-order predicate logic in a structured and parseable syntax.
 
 ### Comments
-Comments are declared using `/*` as in front the start of the comment and `*/` after the end of the comment. The comments are limited to one line per declaration.
+
+Use `/* comment */` for single-line comments. Multiline comments must be split.
+
+---
 
 ### Declarations
-Every predicate, function and variable needs to be declared as follows before used: 
 
-* **Predicate:** ```DECLARE PREDICATE <id> : <arity>```
-* **Function:** ```DECLARE FUNCTION <id> : <arity>```
-* **Variable:** ```DECLARE VARIABLE <id> : int```
+All symbols must be explicitly declared before usage:
 
-```<id>``` declares the identifier and ```<arity>``` declares the number of arguments.
+| Type      | Syntax                             |
+| --------- | ---------------------------------- |
+| Predicate | `DECLARE PREDICATE <id> : <arity>` |
+| Function  | `DECLARE FUNCTION <id> : <arity>`  |
+| Variable  | `DECLARE VARIABLE <id> : int`      |
 
-### Operands
-Operand  | PREDLOG1 equivalent
-:-------------: | :-------------:
-&hArr; | <->
-→  | ->
-∨  | \\|
-∧  | &
-¬  | ~
-∀<var>  | ALL[\<var\>] or ALL [\<var\>]
-∃<var>  | EXIST[\<var\>] or EXIST [\<var\>]
-0  | FALSE
-1  | TRUE
+* `<id>`: Name/identifier of the symbol
+* `<arity>`: Number of arguments
 
-### Priority
+---
 
-The order of priority is structured as follows with decreasing priority top down:
+### Operators and Equivalents
 
-1. function
-2. predicate
-3. ∀,∃ 
-4. ¬
-5. ∧
-6. ∨
-7. →
-8. &hArr;
-  
-### Example
-```
+| Logic Symbol | PREDLOG1 Equivalent |
+| ------------ | ------------------- |
+| ↔            | `<->`               |
+| →            | `->`                |
+| ∨            | `\|`                |
+| ∧            | `&`                 |
+| ¬            | `~`                 |
+| ∀ *var*      | `ALL[*var*]`        |
+| ∃ *var*      | `EXIST[*var*]`      |
+| false        | `FALSE`             |
+| true         | `TRUE`              |
+
+Both `ALL[var]` and `ALL [var]` are accepted syntaxes (same for `EXIST`).
+
+---
+
+### Operator Precedence
+
+From highest to lowest:
+
+1. Function
+2. Predicate
+3. Quantifiers (∀, ∃)
+4. Negation (¬)
+5. Conjunction (∧)
+6. Disjunction (∨)
+7. Implication (→)
+8. Biconditional (↔)
+
+---
+
+## 📄 Example
+
+```text
 /* Example PREDLOG1 */
 
 DECLARE PREDICATE Buys : 2
@@ -79,7 +113,10 @@ DECLARE FUNCTION John : 0
 DECLARE VARIABLE x : int
 DECLARE VARIABLE y : int
 
-EXIST[x] (Buys(John,x) & Pumpkin(x)) & ALL[x] ALL[y] (Buys(x,y) & Pumpkin(y) -> Eats(x,y) | Carves(x,y)) 
-&
-ALL[x] (Person(x) -> ALL[y] (Pumpkin(y) -> ~Eats(x,y))) & ~(Person(John) -> EXIST[x] Carves(John,x)) ;
+EXIST[x] (Buys(John,x) & Pumpkin(x)) 
+& ALL[x] ALL[y] (Buys(x,y) & Pumpkin(y) -> Eats(x,y) | Carves(x,y)) 
+& ALL[x] (Person(x) -> ALL[y] (Pumpkin(y) -> ~Eats(x,y))) 
+& ~(Person(John) -> EXIST[x] Carves(John,x)) ;
 ```
+
+This expresses a mix of existential and universal quantifiers, logical implications, conjunctions, and negations—all handled cleanly through the PREDLOG1 syntax.
