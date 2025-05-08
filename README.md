@@ -1,4 +1,4 @@
-<!-- Copyright Andrik Seeger 2022 -->
+<!-- Copyright Andrik Seeger 2022-->
 
 # Compiler for First-Order Predicate Calculus
 
